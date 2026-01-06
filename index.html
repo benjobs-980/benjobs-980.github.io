@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Offline Match</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: white;
+      color: black;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 32px;
+      font-weight: bold;
+    }
+
+    .content {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      font-display: black;
+    }
+
+    .options {
+      display: flex;
+      gap: 40px;
+      width: 100%;
+      max-width: 800px;
+    }
+
+    .card {
+      flex: 1;
+      background: whitesmoke;
+      border-radius: 12px;
+      padding: 40px 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+    }
+
+    .card h2 {
+      margin-bottom: 20px;
+      font-size: 28px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 15px 30px;
+      background: #d6dceb;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      border-radius: 15px;
+      font-size: 18px;
+    }
+
+    .btn:hover {
+      background: #17be30;
+    }
+
+    @media (max-width: 700px) {
+      .options {
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    OFFLINEmatch.ORG
+  </header>
+
+  <div class="content">
+    <div class="options">
+
+      <!-- LEFT SIDE -->
+      <div class="card">
+        <h2>Male</h2>
+        <a class="btn" href="#" target="_blank">
+          Continue
+        </a>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="card">
+        <h2>Female</h2>
+        <a class="btn" href="#" target="_blank">
+          Continue
+        </a>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
