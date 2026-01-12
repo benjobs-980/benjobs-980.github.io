@@ -282,3 +282,81 @@ nav a:hover {
 .modal-btn:hover {
   opacity: 0.9;
 }
+
+/* ===== HAMBURGER MENU ===== */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Desktop */
+nav {
+  display: flex;
+  gap: 24px;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+
+  .nav-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 12px;
+  }
+
+  .logo {
+    white-space: nowrap;
+    font-size: 14px;
+    order: 1;
+  }
+
+  .nav-btn {
+    margin-left: auto;
+    margin-right: 8px;
+    order: 2;
+  }
+
+  .hamburger {
+    display: block;
+    order: 3;
+  }
+
+  nav {
+    position: absolute;
+    top: 64px; /* adjust if needed */
+    left: 0;
+    width: 100%;
+    background: #ffffff;
+    display: none;
+    flex-direction: column;
+    padding: 16px 20px;
+    box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+  }
+
+  nav.active {
+    display: flex;
+  }
+
+  nav a {
+    padding: 12px 0;
+    width: 100%;
+  }
+}
+
+/* ================= BETA BADGE ================= */
+.beta-badge {
+  background: #ec2b2bd4; /* amber */
+  color: #111827;
+  font-size: 11px;
+  font-weight: 700;
+  padding: 3px 6px;
+  margin-left: 6px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
