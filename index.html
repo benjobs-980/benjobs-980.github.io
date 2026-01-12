@@ -10,30 +10,44 @@
 
   <!-- CSS -->
   <link rel="stylesheet" href="style.css"/>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+
 </head>
+
+<!-- ================= COMING SOON MODAL ================= -->
+<div id="comingSoonModal" class="modal-overlay">
+  <div class="modal-box">
+    <h3>Coming Soon</h3>
+    <p>This feature is under development and will be available soon, in shā’ Allāh.</p>
+    <button id="closeModal" class="modal-btn">OK</button>
+  </div>
+</div>
 <body>
 
 <!-- ================= HEADER ================= -->
 <header class="navbar">
   <div class="nav-container">
-    <div class="logo">OfflineMatch</div>
+    <div class="logo">OFFLINEmatch.ORG ( It's a BETA Version )</div>
+    
 
     <nav>
       <a href="#home">Home</a>
       <a href="#how">How It Works</a>
-      <a href="#events">Events</a>
+      <a href="#events">REVERTS</a>
       <a href="#community">Community</a>
       <a href="#about">About</a>
     </nav>
 
-    <button class="nav-btn">Join Now</button>
+    <button class="nav-btn">Feedback</button>
   </div>
 </header>
 
 <!-- ================= HERO ================= -->
 <section class="hero" id="home">
-  <h1>Offlinematch.ORG</h1>
-  <p>We are NOT in Dating BUSINESS</p>
+  <h1>OFFLINEmatch.ORG</h1>
+  <p><strong>We are NOT in Dating BUSINESS</strong></p>
 </section>
 
 <!-- ================= MAIN GRID ================= -->
@@ -58,13 +72,13 @@
 
   <!-- SECONDARY -->
   <div class="card secondary" id="how">
-    <h3>How It Works</h3>
-    <p>Simple steps to connect in the real world.</p>
+    <h3>Marriage related Hadees and Ayaats</h3>
+    <p>Guidance from Islamic teachings.</p>
   </div>
 
   <div class="card secondary" id="events">
-    <h3>Events</h3>
-    <p>Hand-picked offline meetups near you.</p>
+    <h3>Islamic Marriage Guidance</h3>
+    <p>Guidance from Islamic teachings.</p>
   </div>
 
   <div class="card secondary">
@@ -78,20 +92,30 @@
   </div>
 
   <div class="card secondary">
-    <h3>Pricing</h3>
-    <p>Simple and transparent plans.</p>
+    <h3>Marriage QUIZ</h3>
+    <p>Take our quiz to find your perfect match.</p>
   </div>
 
   <div class="card secondary" id="community">
-    <h3>Community</h3>
+    <h3>REVERTS Community</h3>
     <p>A growing offline-first network.</p>
   </div>
 
   <div class="card secondary">
-    <h3>FAQ</h3>
+    <h3>How offlinematch.ORG works FAQ</h3>
     <p>Your questions, clearly answered.</p>
   </div>
 
+  <div class="card secondary">
+    <h3>Marriage EDU and Certificates</h3>
+    <p>Learn about healthy relationships and marriage.</p>
+  </div>
+</section>
+
+<!-- ================= DYNAMIC CONTENT ================= -->  <!-- This section is for JavaScript -->
+<section id="dynamic-content" class="dynamic-content">
+  <h2 id="content-title"></h2>
+  <p id="content-body"></p>
 </section>
 
 <!-- ================= FOOTER ================= -->
@@ -110,6 +134,7 @@
       <a href="#events">Events</a>
       <a href="#community">Community</a>
       <a href="#">Stories</a>
+      <a href="#">Stats</a>
     </div>
 
     <div>
