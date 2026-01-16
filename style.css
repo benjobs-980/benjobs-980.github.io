@@ -340,13 +340,12 @@ body {
   .hamburger {
     order: 3;
     display: block;
-    margin-left: 8px;
+    margin-left: -10px;
     font-size: 24px;
     padding: 6px;
     background: none;
     border: none;
     cursor: pointer;
-    margin-left: -6px;
   }
 
   /* Hide desktop nav links */
@@ -380,8 +379,8 @@ body {
   /* Mobile nav links */
   #mobileNav a {
     width: 100%;
-    padding: 10px 12px;
-    font-size: 14px;
+    padding: 10px 10px;
+    font-size: 10px;
     border-bottom: 1px solid #eee;
   }
 
@@ -412,11 +411,18 @@ body {
 
   /* Reduce logo size on mobile */
 .nav-left .logo {
-  font-size: o.95rem;  /* smaller font size for mobile */
+  font-size: 0.95rem;  /* smaller font size for mobile */
 }
 
 .beta-badge {
   font-size: 7px;   /* smaller badge on mobile */
   padding: 2px 4px;
 }
+
+  /* shrink nav buttons on mobile */
+  .nav-right .nav-btn {
+    padding: 6px 6px;  /* smaller button padding */
+    font-size: 12px;    /* smaller text */
+    white-space: nowrap; /* prevent wrapping */
+  }
 }
