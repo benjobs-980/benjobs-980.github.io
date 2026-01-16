@@ -310,9 +310,11 @@ body {
   .nav-container {
     display: flex;
     align-items: center;
-    justify-content: flex-start;  /* flex order will control positions */
-    padding: 12px 16px;
+    justify-content: space-between;  /* flex order will control positions */
+    padding: 12px 10px;
     gap: 8px;
+    flex-wrap: nowrap;
+    width: 100%;
   }
 
   /* Logo stays left */
@@ -340,9 +342,11 @@ body {
     display: block;
     margin-left: 8px;
     font-size: 24px;
+    padding: 6px;
     background: none;
     border: none;
     cursor: pointer;
+    margin-left: -6px;
   }
 
   /* Hide desktop nav links */
@@ -408,11 +412,11 @@ body {
 
   /* Reduce logo size on mobile */
 .nav-left .logo {
-  font-size: 1rem;  /* smaller font size for mobile */
+  font-size: o.95rem;  /* smaller font size for mobile */
 }
 
 .beta-badge {
-  font-size: 8px;   /* smaller badge on mobile */
+  font-size: 7px;   /* smaller badge on mobile */
   padding: 2px 4px;
 }
 }
