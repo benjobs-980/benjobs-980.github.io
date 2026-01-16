@@ -21,38 +21,106 @@ body {
 }
 
 .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* LEFT / CENTER / RIGHT */
   max-width: 1200px;
   margin: auto;
   padding: 16px 20px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
 }
 
-.logo {
+/* LEFT: Logo */
+.nav-left .logo {
   font-weight: 700;
   font-size: 1.3rem;
+  white-space: nowrap;
 }
 
-nav a {
-  margin: 0 14px;
+.beta-badge {
+  background: #ec2b2bd4;
+  color: #111827;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 6px;
+  margin-left: 6px;
+  border-radius: 6px;
+  vertical-align: middle;
+}
+
+/* CENTER: Desktop nav links */
+.nav-center {
+  display: flex;
+  gap: 12px; /* adjust spacing between links */
+  flex-grow: 1;
+  justify-content: center;
+}
+
+.nav-center a {
   text-decoration: none;
   color: #111;
   font-weight: 500;
+  padding: 4px 6px;
 }
 
-nav a:hover {
+.nav-center a:hover {
   color: #555;
 }
 
+/* RIGHT: Desktop buttons */
+.nav-right {
+  display: flex;
+  gap: 8px; /* space between buttons */
+}
+
 .nav-btn {
-  padding: 10px 22px;
-  border-radius: 24px;
+  padding: 10px 24px;
+  border-radius: 25px;
   border: none;
   background: #111;
   color: white;
   cursor: pointer;
 }
+
+/* ================= HAMBURGER ================= */
+.hamburger {
+  display: none;
+  font-size: 26px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* ================= MOBILE MENU ================= */
+#mobileNav {
+  display: none;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 64px);
+  background: #ffffff;
+  flex-direction: column;
+  padding: 16px 20px;
+  gap: 10px;
+  box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+  z-index: 999;
+  overflow-y: auto;
+}
+
+#mobileNav.active {
+  display: flex;
+}
+
+#mobileNav a {
+  width: 100%;
+  padding: 12px 16px;
+  border-bottom: 1px solid #eee;
+  text-decoration: none;
+  color: #111;
+  font-weight: 500;
+}
+
+
 
 /* ================= HERO ================= */
 .hero {
@@ -116,27 +184,21 @@ nav a:hover {
   margin-bottom: 24px;
 }
 
-.primary button {
+.primary-btn {
+  display: inline-block;
   background: #fff;
   color: #111;
-  border: none;
   padding: 14px 32px;
   border-radius: 30px;
   font-size: 1rem;
-  cursor: pointer;
+  text-decoration: none;
+  font-weight: 600;
+  transition: transform 0.3s ease, background 0.3s ease;
 }
 
-.primary button:hover {
+.primary-btn:hover {
+  background: #ddd;
   transform: scale(1.05);
-}
-
-.tag {
-  display: inline-block;
-  margin-bottom: 14px;
-  font-size: 0.75rem;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  color: #bbb;
 }
 
 /* SECONDARY */
@@ -188,58 +250,7 @@ nav a:hover {
   color: #777;
 }
 
-/* ================= MOBILE ================= */
-@media (max-width: 768px) {
-  nav {
-    display: none;
-  }
-
-  .primary {
-    grid-column: span 1;
-  }
-
-  .hero h1 {
-    font-size: 2.4rem;
-  }
-}
-
-/* ================= BUTTON STYLE ================= */
-.primary-btn {
-  display: inline-block;
-  background: #fff;
-  color: #111;
-  padding: 14px 32px;
-  border-radius: 30px;
-  font-size: 1rem;
-  text-decoration: none;
-  font-weight: 600;
-  transition: transform 0.3s ease, background 0.3s ease;
-}
-
-.primary-btn:hover {
-  background: #ddd;
-  transform: scale(1.05);
-}
-
-/* ================= Clickable cards =================*/
-
-/* ONLY small cards are clickable */
-.card.secondary {
-  cursor: pointer;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.card.secondary:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 28px rgba(0,0,0,0.15);
-}
-
-/* Prevent primary cards from acting clickable */
-.card.primary {
-  cursor: default;
-}
-
-/* Modal overlay */ /* Coming Soon Modal */
+/* ================= MODAL ================= */
 .modal-overlay {
   position: fixed;
   inset: 0;
@@ -250,7 +261,6 @@ nav a:hover {
   z-index: 1000;
 }
 
-/* Modal box */
 .modal-box {
   background: #ffffff;
   padding: 30px 24px;
@@ -283,80 +293,126 @@ nav a:hover {
   opacity: 0.9;
 }
 
-/* ===== HAMBURGER MENU ===== */
-.hamburger {
-  display: none;
-  font-size: 26px;
-  background: none;
-  border: none;
-  cursor: pointer;
+/* Mobile nav buttons container */
+#mobileNav-buttons {
+  display: flex;                /* show buttons side by side */
+  justify-content: space-between; 
+  margin-top: 16px;             /* space from links above */
+  border-top: 1px solid #eee;   /* optional separator */
+  padding-top: 12px;
+  gap: 8px;                     /* space between buttons */
 }
 
-/* Desktop */
-nav {
-  display: flex;
-  gap: 24px;
-}
-
-/* Mobile */
+/* ================= MOBILE UI ================= */
 @media (max-width: 768px) {
 
+  /* Nav container flex layout for mobile */
   .nav-container {
     display: flex;
-    flex-direction: row;
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: nowrap;
-    gap: 12px;
+    justify-content: flex-start;  /* flex order will control positions */
+    padding: 12px 16px;
+    gap: 8px;
   }
 
-  .logo {
-    white-space: nowrap;
-    font-size: 14px;
+  /* Logo stays left */
+  .nav-left {
     order: 1;
   }
 
-  .nav-btn {
-    margin-left: auto;
-    margin-right: 8px;
+  /* Buttons appear next to hamburger, on right side */
+  .nav-right {
     order: 2;
+    display: flex;
+    gap: 6px;
+    margin-left: auto; /* push to the right */
   }
 
+  .nav-btn {
+    padding: 6px 10px;
+    font-size: 12px;
+    border-radius: 20px;
+  }
+
+  /* Hamburger stays at far right corner */
   .hamburger {
-    display: block;
     order: 3;
+    display: block;
+    margin-left: 8px;
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
   }
 
-  nav {
-    position: absolute;
-    top: 64px; /* adjust if needed */
+  /* Hide desktop nav links */
+  .nav-center {
+    display: none;
+  }
+
+  /* Mobile nav menu */
+  #mobileNav {
+    display: none;
+    position: fixed;
+    top: 64px;
     left: 0;
     width: 100%;
-    background: #ffffff;
-    display: none;
+    height: auto;
+    max-height: 60vh;
+    background: #fff;
     flex-direction: column;
     padding: 16px 20px;
+    gap: 10px;
     box-shadow: 0 10px 24px rgba(0,0,0,0.1);
+    z-index: 999;
+    overflow-y: auto;
   }
 
-  nav.active {
+  /* Show mobile nav when active */
+  #mobileNav.active {
     display: flex;
   }
 
-  nav a {
-    padding: 12px 0;
+  /* Mobile nav links */
+  #mobileNav a {
     width: 100%;
+    padding: 10px 12px;
+    font-size: 14px;
+    border-bottom: 1px solid #eee;
   }
+
+  /* Center hero text */
+  .hero {
+    text-align: center;
+    padding: 40px 20px 80px;
+  }
+
+  .hero h1 {
+    font-size: 2.4rem;
+  }
+
+  .hero p {
+    font-size: 1.1rem;
+  }
+
+  /* Grid: single column for smaller screens */
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .primary {
+    grid-column: span 1;
+  }
+
+  /* Reduce logo size on mobile */
+.nav-left .logo {
+  font-size: 1rem;  /* smaller font size for mobile */
 }
 
-/* ================= BETA BADGE ================= */
 .beta-badge {
-  background: #ec2b2bd4; /* amber */
-  color: #111827;
-  font-size: 11px;
-  font-weight: 700;
-  padding: 3px 6px;
-  margin-left: 6px;
-  border-radius: 6px;
-  vertical-align: middle;
+  font-size: 8px;   /* smaller badge on mobile */
+  padding: 2px 4px;
+}
 }

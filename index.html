@@ -12,9 +12,10 @@
   <link rel="stylesheet" href="style.css"/>
 
   <!-- JavaScript -->
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 
 </head>
+<body>
 
 <!-- ================= COMING SOON MODAL ================= -->
 <div id="comingSoonModal" class="modal-overlay">
@@ -24,24 +25,45 @@
     <button id="closeModal" class="modal-btn">OK</button>
   </div>
 </div>
-<body>
 
 <!-- ================= HEADER ================= -->
 <header class="navbar">
   <div class="nav-container">
-    <div class="logo">OFFLINEmatch.ORG <span class="beta-badge">BETA</span></div>
 
+    <!-- LEFT: Logo -->
+    <div class="nav-left">
+      <div class="logo">
+        OFFLINEmatch.ORG <span class="beta-badge">BETA Version</span>
+      </div>
+    </div>
+
+    <!-- CENTER: Desktop Nav Links -->
+    <nav class="nav-center">
+      <a href="#home">Home</a>
+      <a href="#how">How It Works</a>
+      <a href="#events">REVERTS</a>
+      <a href="#community">Community</a>
+      <a href="#about">About</a>
+    </nav>
+
+    <!-- RIGHT: Buttons -->
+    <div class="nav-right">
+      <button class="nav-btn">My Store</button>
+      <button class="nav-btn">Feedback</button>
+    </div>
+
+    <!-- Hamburger Button -->
     <button class="hamburger" id="hamburger">☰</button>
-<nav id="mobileNav">
-  <a href="#home">Home</a>
-  <a href="#how">How It Works</a>
-  <a href="#events">REVERTS</a>
-  <a href="#community">Community</a>
-  <a href="#about">About</a>
-</nav>
 
+    <!-- Mobile Nav Links -->
+    <nav id="mobileNav">
+      <a href="#home">Home</a>
+      <a href="#how">How It Works</a>
+      <a href="#events">REVERTS</a>
+      <a href="#community">Community</a>
+      <a href="#about">About</a>
+    </nav>
 
-  <button class="nav-btn">Feedback</button>
   </div>
 </header>
 
@@ -60,7 +82,6 @@
     <h2>Male</h2>
     <p>Meet genuine people through curated offline experiences.</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLScla--QHRirZHPey3kELZIGSqljhuGEL39u4jKo8oVG8C23Yg/viewform?usp=mail_form_link" target="_blank" class="primary-btn">Continue</a>
-
   </div>
 
   <div class="card primary alt">
@@ -68,10 +89,9 @@
     <h2>Female</h2>
     <p>Safe, comfortable, and meaningful connections.</p>
     <a href="https://docs.google.com/forms/d/e/1FAIpQLSed8M2pD61OwbPS8ibgq5hoimYiudekTPwFmUuW_OmnxbNq8A/viewform?usp=mail_form_link" target="_blank" class="primary-btn">Continue</a>
-
   </div>
 
-  <!-- SECONDARY -->
+    <!-- SECONDARY -->
   <div class="card secondary" id="how">
     <h3>Marriage related Hadees and Ayaats</h3>
     <p>Guidance from Islamic teachings.</p>
@@ -111,17 +131,32 @@
     <h3>Marriage EDU and Certificates</h3>
     <p>Learn about healthy relationships and marriage.</p>
   </div>
+
+  <div class="card secondary">
+    <h3>Books</h3>
+    <p>Explore our curated collection of Islamic marriage books.</p>
+  </div>
+
+  <div class="card secondary">
+    <h3>Coming Soon</h3>
+    <p>More features coming soon.</p>
+  </div>
+
+ <div class="card secondary">
+    <h3>Coming Soon</h3>
+    <p>More features coming soon.</p>
+  </div>
+
+ <div class="card secondary">
+    <h3>Coming Soon</h3>
+    <p>More features coming soon.</p>
+  </div>
 </section>
 
-<!-- ================= DYNAMIC CONTENT ================= -->  <!-- This section is for JavaScript -->
-<section id="dynamic-content" class="dynamic-content">
-  <h2 id="content-title"></h2>
-  <p id="content-body"></p>
 </section>
 
 <!-- ================= FOOTER ================= -->
 <footer class="footer" id="about">
-
   <div class="footer-grid">
 
     <div class="footer-brand">
@@ -158,7 +193,6 @@
   <div class="footer-bottom">
     © 2026 OfflineMatch.org · All rights reserved
   </div>
-
 </footer>
 
 </body>
