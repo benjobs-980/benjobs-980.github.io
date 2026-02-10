@@ -79,6 +79,7 @@ body {
   background: #111;
   color: white;
   cursor: pointer;
+  text-decoration: none;
 }
 
 /* ================= HAMBURGER ================= */
